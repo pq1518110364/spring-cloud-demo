@@ -1,6 +1,6 @@
 package com.bishop.zuul.filter;
 
-import com.bishop.common.utils.RedisClient;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
@@ -22,8 +22,8 @@ public class Test {
 
     @GetMapping("/test")
     public void  test(){
-        RedisClient.getInstance().lPush("123","345");
-        RedisClient.getInstance().lPush("123","197");
+       // RedisClient.getInstance().lPush("123","345");
+       // RedisClient.getInstance().lPush("123","197");
         while (Thread.currentThread().isInterrupted()){
             List<byte[]> list=  lettuceConnectionFactory.getConnection().bRPop(100,"123".getBytes());
             if (list!=null){
