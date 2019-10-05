@@ -3,21 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>demo</artifactId>
+        <artifactId>base-server</artifactId>
         <groupId>com.example</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>base-server</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>zuul-server</module>
-        <module>eureka-server</module>
-        <module>config-server</module>
-        <module>sleuth-server</module>
-        <module>zipkin-server</module>
-    </modules>
-
+    <groupId>com.example</groupId>
+    <artifactId>zipkin-server</artifactId>
 
 </project>

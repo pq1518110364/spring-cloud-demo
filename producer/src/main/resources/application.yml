@@ -1,14 +1,10 @@
 server:
-  port: 9003
+  port: 8002
+  servlet:
+    context-path: /producer
 spring:
   application:
-    name: config
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/pq1518110364/spring-cloud-conifig-demo.git  # 远程git仓库的地址
-          search-paths: zuul
+    name: producer
 
 eureka:
   instance:
@@ -19,3 +15,10 @@ eureka:
     service-url:
       defaultZone:  http://localhost:9001/eureka/
 
+logging:
+  config:
+    classpath: log4j2.yml
+
+feign:
+   hystrix:
+      enabled: false

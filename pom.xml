@@ -6,6 +6,8 @@
     <modules>
         <module>common-module</module>
         <module>base-server</module>
+        <module>consumer</module>
+        <module>producer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -22,6 +24,18 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -49,22 +63,23 @@
                 <version>0.4.13</version>
                 <configuration>
                     <!--用于指定镜像名称-->
-                    <imageName>${project.name}:${project.version}</imageName>
+                    <imageName>127.0.0.1:5000/${project.name}:${project.version}</imageName>
                     <!--用于指定基础镜像，相当于Dockerfile中的FROM指令-->
                     <baseImage>java</baseImage>
                     <!--相当于Dockerfile的ENTRYPOINT指令-->
                     <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <!--是否跳过docker build-->
-                    <skipDockerBuild>true</skipDockerBuild>
+                    <!--<skipDockerBuild>true</skipDockerBuild>-->
                     <resources>
                         <resource>
-                            <targetPath>/Users/xiangwei/IdeaProjects/spring-cloud-demo</targetPath>
+                            <targetPath>/</targetPath>
                             <!--用于指定需要复制的根目录，${project.build.directory}表示target目录-->
                             <directory>${project.build.directory}</directory>
                             <!--用于指定需要复制的文件。${project.build.finalName}.jar指的是打包后的jar包文件。-->
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <dockerHost>http://127.0.0.1:2375</dockerHost>
                 </configuration>
 
             </plugin>
