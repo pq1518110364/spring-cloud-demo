@@ -63,7 +63,7 @@ public class ThreadPoolUtil<T> {
         private static final ThreadPoolUtil THREAD_POOL_UTIL = new ThreadPoolUtil();
     }
 
-    public ThreadPoolUtil getInstance(){
+    public static ThreadPoolUtil getInstance(){
         return ThreadPoolInstant.THREAD_POOL_UTIL;
     }
 
