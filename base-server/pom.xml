@@ -16,7 +16,8 @@
         <module>eureka-server</module>
         <module>config-server</module>
         <module>sleuth-server</module>
-        <module>zipkin-server</module>
+       <!-- <module>zipkin-server</module>-->
+        <module>spring-boot-admin-server</module>
     </modules>
 
 

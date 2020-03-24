@@ -1,11 +1,14 @@
 server:
-  port: 8001
-  servlet:
-    context-path: /consumer
+  port: 80
 
 spring:
   application:
     name: consumer
+  mvc:
+    view:
+      prefix: /
+      suffix=: html
+
 
 eureka:
   instance:
@@ -23,3 +26,5 @@ logging:
 feign:
   hystrix:
     enabled: false
+
+

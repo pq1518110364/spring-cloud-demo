@@ -1,3 +1,4 @@
+/*
 package com.bishop.common.config;
 
 
@@ -24,13 +25,15 @@ import javax.annotation.Resource;
 import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
+*/
 /**
   * 功能描述:
   *
   * @Author: bishop
   * @Description:
   * @Date: 2019-04-18
-  **/
+  **//*
+
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
@@ -53,14 +56,16 @@ public class RedisConfig extends CachingConfigurerSupport {
         };
     }
 
-    /**
+    */
+/**
       * 功能描述:缓存管理器
       *
       * @Author: bishop
       * @Description:
       * @Date: 2019-04-18
       * @return: org.springframework.cache.CacheManager
-      **/
+      **//*
+
     @Override
     @Bean
     public CacheManager cacheManager() {
@@ -84,7 +89,8 @@ public class RedisConfig extends CachingConfigurerSupport {
         return builder.build();
     }
 
-    /**
+    */
+/**
       * 功能描述:RedisTemplate设置
       *
       * @Author: bishop
@@ -92,7 +98,8 @@ public class RedisConfig extends CachingConfigurerSupport {
       * @Date: 2019-04-18
       * @param lettuceConnectionFactory:
       * @return: org.springframework.data.redis.core.RedisTemplate<java.lang.String,java.lang.Object>
-      **/
+      **//*
+
     @Bean
     public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory lettuceConnectionFactory) {
         // 设置序列化
@@ -118,4 +125,4 @@ public class RedisConfig extends CachingConfigurerSupport {
         return redisTemplate;
     }
 
-}
+}*/

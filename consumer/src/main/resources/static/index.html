@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你好</title>
+    <link rel="shortcut icon" href="#"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <!--<script src="jquery/1.12.4/jquery.min.js" type="text/javascript"></script>-->
+    <script src="http://nas.einyun.ltd:5000/webman/sso/synoSSO-1.0.0.js" type="text/javascript"></script>
+
+    </head>
+<body>
+    <p id="ssoAuth">
+        sdfds
+    </p>
+</body>
+<script type="text/javascript">
+    $(function () {
+        SYNOSSO.logout(function(res){
+            console.log("登出成功"+res);
+        });
+
+        //登录初始化
+        SYNOSSO.init({
+            oauthserver_url: 'http://nas.einyun.ltd:5000',
+            app_id: '97c4648b77745ab612c1dc590277020d',
+            redirect_uri: 'http://172.31.99.193', //redirect url have to be the same as the one registered in SSO server, and can be a plain text html file.
+            callback:function(response){
+                console.log("登录成功"+response);
+            }
+        });
+        //第三方登录sso
+        $("#ssoAuth").on('click', function () {
+            //登录
+            SYNOSSO.login();
+            //登出
+        });
+        //初始化回调
+        function authCallback(){
+            console.log("登录成功");
+        }
+    });
+</script>
+</html>
