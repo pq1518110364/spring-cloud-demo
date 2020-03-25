@@ -39,4 +39,8 @@ eureka:
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 10
     instance-id: ${spring.application.name}:${server.port}
+    register-with-eureka: false
+    fetch-registry: false
+   # service-url:
+    #  defaultZone: ${EUREKA_SERVER:http://${eureka.instance.hostname}:9002/eureka/}
 

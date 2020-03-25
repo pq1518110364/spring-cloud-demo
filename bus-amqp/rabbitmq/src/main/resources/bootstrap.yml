@@ -1,0 +1,20 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: RabbitMQ
+  rabbitmq:
+    host: 192.168.56.134
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}(${spring.cloud.client.ip-address}:${server.port})
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      #defaultZone:  http://localhost:9001/eureka/
+      defaultZone:  http://192.168.56.134:9001/eureka/

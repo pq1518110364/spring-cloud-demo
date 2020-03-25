@@ -17,6 +17,8 @@
         <module>config-server</module>
         <module>sleuth-server</module>
        <!-- <module>zipkin-server</module>-->
+<!--        <module>MyBatis-Generator</module>-->
+       <!-- <module>zipkin-server</module>-->
         <module>spring-boot-admin-server</module>
     </modules>
 

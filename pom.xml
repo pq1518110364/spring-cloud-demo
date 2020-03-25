@@ -8,6 +8,8 @@
         <module>base-server</module>
         <module>consumer</module>
         <module>producer</module>
+        <module>bus-amqp</module>
+        <module>sources-learning</module>
         <module>easy-excel</module>
     </modules>
     <parent>
