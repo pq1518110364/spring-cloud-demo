@@ -8,6 +8,7 @@
         <module>base-server</module>
         <module>consumer</module>
         <module>producer</module>
+        <module>easy-excel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
