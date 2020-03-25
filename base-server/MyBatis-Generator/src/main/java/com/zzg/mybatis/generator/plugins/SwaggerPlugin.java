@@ -14,10 +14,6 @@ import java.util.Objects;
  * @Description:
  */
 public class SwaggerPlugin extends PluginAdapter {
-    public static void main(String[] args) {
-        generate();
-    }
-
     public static void generate() {
         String config = Objects.requireNonNull(SwaggerPlugin.class.getClassLoader().getResource("generator/mybatis-generator.xml")).getFile();
         String[] arg = { "-configfile", config, "-overwrite" };
