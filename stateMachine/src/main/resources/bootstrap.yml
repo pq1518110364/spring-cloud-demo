@@ -1,0 +1,16 @@
+server:
+  port: 8010
+  servlet:
+    context-path: /statemachine
+spring:
+  application:
+    name: statemachine
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}(${spring.cloud.client.ip-address}:${server.port})
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone:  http://101.133.166.26:8761/eureka/

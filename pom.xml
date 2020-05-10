@@ -11,6 +11,7 @@
 <!--        <module>bus-amqp</module>-->
         <module>sources-learning</module>
         <module>easy-excel</module>
+        <module>stateMachine</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
