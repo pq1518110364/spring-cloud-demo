@@ -51,3 +51,4 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
     }
 
 }
+Callable

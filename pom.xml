@@ -12,6 +12,12 @@
         <module>sources-learning</module>
         <module>easy-excel</module>
         <module>stateMachine</module>
+        <module>Design-Pattern-Practice</module>
+        <module>best-practices</module>
+        <module>amqp</module>
+        <module>redis</module>
+        <module>multithreading</module>
+        <module>mongoDB</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

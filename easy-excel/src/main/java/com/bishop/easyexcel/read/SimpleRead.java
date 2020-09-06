@@ -2,6 +2,7 @@ package com.bishop.easyexcel.read;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
+import com.alibaba.excel.enums.CellExtraTypeEnum;
 import com.alibaba.excel.read.metadata.ReadSheet;
 import com.bishop.easyexcel.download.EasyExcelDemo;
 
@@ -18,9 +19,10 @@ public class SimpleRead {
     public static void main(String[] args) {
         // 有个很重要的点 DemoDataListener 不能被spring管理，要每次读取excel都要new,然后里面用到spring可以构造方法传进去
         // 写法1：
-        String fileName ="C:\\Users\\18570\\Downloads\\测试.xlsx";
+        String fileName ="/Users/xiangwei/Downloads/数据字典(主数据字典已匹配).xlsx";
         // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
-        EasyExcel.read(fileName, new NoModelDataListener()).sheet().doRead();
+        EasyExcel.read(fileName, new NoModelDataListener())
+                .extraRead(CellExtraTypeEnum.MERGE).sheet().doRead();
         // 写法2：
 //        fileName = TestFileUtil.getPath() + "demo" + File.separator + "demo.xlsx";
 //        ExcelReader excelReader = EasyExcel.read(fileName, Object.class, new DemoDataListener()).build();

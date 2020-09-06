@@ -1,0 +1,23 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: mongodb
+  mvc:
+    view:
+      prefix: /
+      suffix=: html
+  data:
+    mongodb:
+      uri: mongodb://user:123456@101.133.166.26:27017/?authSource=admin
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}(${spring.cloud.client.ip-address}:${server.port})
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone:  http://101.133.166.26:8761/eureka/
+

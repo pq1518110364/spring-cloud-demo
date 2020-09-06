@@ -1,0 +1,33 @@
+server:
+  port: 8007
+  servlet:
+    context-path: /amqp
+spring:
+  application:
+    name: amqp
+# rabbitmq连接基本配置
+  rabbitmq:
+    addresses:  101.133.166.26:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 15000
+
+  # 开启confirm机制
+    publisher-confirms: true
+  # 开启return模式
+    publisher-returns: true
+  # 配合return机制使用，表示接收路由不可达的消息
+    template:
+      mandatory: true
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.application.name}(${spring.cloud.client.ip-address}:${server.port})
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone:  http://101.133.166.26:8761/eureka/
+

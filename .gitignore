@@ -1,5 +1,5 @@
 HELP.md
-/target/
+/target/**
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -27,3 +27,11 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+Design-Pattern-Practice/src/main/resources/
+Design-Pattern-Practice/src/test/
+best-practices/src/main/resources/
+best-practices/src/test/
+mongoDB/src/test/
+multithreading/src/main/resources/
+multithreading/src/test/
+redis/src/
